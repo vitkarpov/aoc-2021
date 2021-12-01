@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.6.0"
+    application
 }
 
 repositories {
@@ -16,4 +17,8 @@ tasks {
     wrapper {
         gradleVersion = "7.3"
     }
+}
+
+application {
+    mainClassName = "Day01Kt"
 }
