@@ -1,5 +1,3 @@
-data class Point(val x: Int, val y: Int)
-
 fun main(args: Array<String>) {
     fun part1(input: List<String>): Int {
         val points = parseInput(input)

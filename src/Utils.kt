@@ -2,6 +2,11 @@ import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
 
+data class Point(val x: Int, val y: Int)
+
+typealias Grid = List<List<Int>>
+typealias MutableGrid = MutableList<MutableList<Int>>
+
 /**
  * Reads lines from the given input txt file.
  */
