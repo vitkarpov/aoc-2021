@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-    fun searchMin(curr: Point, grid: Grid, cache: MutableMap<Point, Int>): Unit {
+    fun searchMin(curr: Point, grid: Grid, cache: MutableMap<Point, Int>) {
         val currValue = grid[curr.y][curr.x]
         if (
             grid[curr.y][curr.x - 1] > currValue &&
@@ -19,10 +19,10 @@ fun main(args: Array<String>) {
         grid[curr.y][curr.x] = 9
         return 1 + (
             dfs(Point(curr.x, curr.y - 1), grid) +
-            dfs(Point(curr.x, curr.y + 1), grid) +
-            dfs(Point(curr.x - 1, curr.y), grid) +
-            dfs(Point(curr.x + 1, curr.y), grid)
-        )
+                dfs(Point(curr.x, curr.y + 1), grid) +
+                dfs(Point(curr.x - 1, curr.y), grid) +
+                dfs(Point(curr.x + 1, curr.y), grid)
+            )
     }
 
     fun parse(name: String) = readInput(name)

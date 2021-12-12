@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.6.0"
     application
+    id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
 }
 
 repositories {
@@ -20,5 +21,5 @@ tasks {
 }
 
 application {
-    mainClassName = "Day09Kt"
+    mainClassName = "Day10Kt"
 }

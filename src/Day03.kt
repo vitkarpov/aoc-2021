@@ -1,16 +1,16 @@
 fun main(args: Array<String>) {
     fun part1(input: List<String>): Int {
-        val gamma = mutableListOf<Int>();
+        val gamma = mutableListOf<Int>()
         val height = input.first().length
 
-        for (row in (0..height-1)) {
-            var ones = 0;
-            var zeroes = 0;
+        for (row in (0..height - 1)) {
+            var ones = 0
+            var zeroes = 0
             for (item in input) {
                 if (item[row] == '1') {
-                    ones += 1;
+                    ones += 1
                 } else {
-                    zeroes += 1;
+                    zeroes += 1
                 }
             }
             gamma.add(if (ones > zeroes) 1 else 0)
@@ -42,14 +42,14 @@ fun List<String>.toRating(predicate: (Int, Int, Char) -> Boolean): Int {
     val len = this.first().length
 
     for (pos in (0..len - 1)) {
-        var ones = 0;
-        var zeroes = 0;
-        
+        var ones = 0
+        var zeroes = 0
+
         for (item in result) {
             if (item[pos] == '1') {
-                ones += 1;
+                ones += 1
             } else {
-                zeroes += 1;
+                zeroes += 1
             }
         }
         result = result.filter { predicate(ones, zeroes, it[pos]) }

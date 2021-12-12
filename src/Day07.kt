@@ -1,4 +1,6 @@
-import kotlin.math.*
+import kotlin.math.abs
+import kotlin.math.ceil
+import kotlin.math.floor
 
 fun main(args: Array<String>) {
     fun part1(input: List<String>): Int {

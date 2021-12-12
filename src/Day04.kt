@@ -71,7 +71,7 @@ fun Board.getScore(): Int {
             score += if (!cell.marked) cell.value else 0
         }
     }
-    return score 
+    return score
 }
 
 fun parseBoards(input: List<String>): List<Board> {
@@ -96,11 +96,11 @@ fun List<Board>.findWinners(): List<Board> {
 
 fun isWinner(board: Board) =
     board.any { row -> row.all { it.marked } } ||
-    board.transpose().any { col -> col.all { it.marked } }
+        board.transpose().any { col -> col.all { it.marked } }
 
 fun Board.transpose(): Board {
-    val rows = this.size;
-    val cols = this.first().size;
+    val rows = this.size
+    val cols = this.first().size
     val result = List(cols) {
         (0 until rows).map { it to false }.toMutableList()
     }

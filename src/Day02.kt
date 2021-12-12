@@ -9,8 +9,8 @@ data class Entry(
 
 fun main(args: Array<String>) {
     fun part1(input: List<Entry>): Int {
-        var length: Int = 0;
-        var depth: Int = 0;
+        var length: Int = 0
+        var depth: Int = 0
 
         for (entry in input) {
             when (entry.dir) {
@@ -18,15 +18,15 @@ fun main(args: Array<String>) {
                 Direction.up -> depth -= entry.units
                 Direction.down -> depth += entry.units
             }
-            check(depth >= 0);
+            check(depth >= 0)
         }
         return depth * length
     }
 
     fun part2(input: List<Entry>): Long {
-        var aim: Long = 0;
-        var depth: Long = 0;
-        var length: Long = 0;
+        var aim: Long = 0
+        var depth: Long = 0
+        var length: Long = 0
 
         for (entry in input) {
             when (entry.dir) {
@@ -37,7 +37,7 @@ fun main(args: Array<String>) {
                 Direction.up -> aim -= entry.units
                 Direction.down -> aim += entry.units
             }
-            check(depth >= 0);
+            check(depth >= 0)
         }
         return depth * length
     }

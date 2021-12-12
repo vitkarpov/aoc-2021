@@ -8,9 +8,9 @@ fun main(args: Array<String>) {
     }
 
     fun part2(input: List<String>): Int {
-        val codes = input.map{it.split('|').map{it.trim().split(' ').map{it.toCharArray().sorted().joinToString("")}}}
+        val codes = input.map { it.split('|').map { it.trim().split(' ').map { it.toCharArray().sorted().joinToString("") } } }
 
-        return codes.sumBy{ decipher(it[0].toMutableList(), it[1]) }
+        return codes.sumBy { decipher(it[0].toMutableList(), it[1]) }
     }
 
     // test if implementation meets criteria from the description, like:
