@@ -1,4 +1,17 @@
 fun main(args: Array<String>) {
+    val dp = HashMap<Pair<Int, Int>, Long>()
+
+    fun dfs(num: Int, days: Int): Long {
+        return when {
+            num == -1 -> dfs(6, days) + dfs(8, days)
+            days == 0 -> 1L
+            else -> dp[num to days] ?: dfs(num - 1, days - 1).also { dp[num to days] = it }
+        }
+    }
+
+    fun solve(input: String, days: Int) =
+        input.split(',').map { it.toInt() }.map { dfs(it, days) }.sum()
+
     fun part1(input: List<String>): Long {
         check(input.size == 1)
         return solve(input.first(), 80)
@@ -18,16 +31,3 @@ fun main(args: Array<String>) {
     println(part1(input))
     println(part2(input))
 }
-
-val dp = HashMap<Pair<Int, Int>, Long>()
-
-fun dfs(num: Int, days: Int): Long {
-    return when {
-        num == -1 -> dfs(6, days) + dfs(8, days)
-        days == 0 -> 1L
-        else -> dp[num to days] ?: dfs(num - 1, days - 1).also { dp[num to days] = it }
-    }
-}
-
-fun solve(input: String, days: Int) =
-    input.split(',').map { it.toInt() }.map { dfs(it, days) }.sum()
